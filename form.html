@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@300;400;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.js"
+        integrity="sha256-fNXJFIlca05BIO2Y5zh1xrShK3ME+/lYZ0j+ChxX2DA=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="print-area">
+        <form action="" id="form-all">
+            <div class="header">
+                <img src="img/stepDefault-dIIv.svg" id="blah">
+
+                <div class="header-text">
+                    <input type="text" name="name" placeholder="Name and Surname" class="name">
+                    <hr>
+                    <input type="text" name="work" placeholder="Occupation" class="work">
+                </div>
+            </div>
+
+            <div class="content">
+                <div class="left-area">
+                    <div class="contact">
+
+                        <div class="addPhoto">
+                            <label for="files" class="btn">Select Image</label>
+                            <input id="files" style="visibility:hidden;" type="file">
+                        </div>
+
+                        <h4>CONTACT</h4>
+                        <h5>Phone</h5>
+                        <input type="number" name="number" placeholder="+48733408194" class="number">
+                        <h5>e-mail</h5>
+                        <input type="email" name="email" placeholder="login@gmail.com" class="email">
+                        <h5>Home</h5>
+                        <textarea name="text-area" id="home" cols="30" rows="3" class="home" placeholder="Zygmunta Sierakowskiego 67/1
+    51-678
+    Wrocław, Polska"></textarea>
+                    </div>
+
+                    <div class="skills">
+                        <td><label>
+                                <h4>SKILLS</h4>
+                            </label></td>
+                        <td>
+                            <ul id="skill"></ul>
+                            <input type="text" name="skill" id="addSkill" />
+                            <input type="button" name="addskill" class="add-div" id="add-div" value="+"
+                                onclick="addSkill()" style="width: 30px;">
+
+                        </td>
+                    </div>
+
+
+
+                </div>
+
+                <div class="right-area">
+                    <div class="about">
+                        <h4><span><i class='bx bx-user'></i></span>ABOUT ME</h4>
+
+                        <textarea name="about-me" id="about-me" class="about-me" rows="2" maxlength="700"
+                            oninput="auto_grow(this)"></textarea>
+
+                    </div>
+
+
+                    <div class="work">
+
+                        <h4><span><i class='bx bx-briefcase'></i></span>WORK EXPERIENCE</h4>
+                        <input type="button" name="answer" class="add-div" id="add-div" value="+" onclick="addDiv()"
+                            style="width: 30px;">
+                        <br>
+                        <br>
+                        <div class="work-group" id="welcomeDiv">
+                            <label> Whom</label>
+                            <input type="text" class="work-one" id="work-one" style="width: 70%;">
+                            <hr>
+
+                            <label>Where</label>
+                            <!-- <textarea name="whom" id="whom" cols="30" rows="2"></textarea> -->
+
+                            <input type="text" class="where-one" id="where-one" style="width: 70%;">
+                            <hr>
+                            <div class="from-to">
+                                <label for="from" class="from-label">From</label>
+                                <input type="date" class="from" id="from">
+                                <hr>
+                                <label for="to" class="to-label">To</label>
+                                <input type="date" class="to" id="to">
+                                <hr>
+                            </div>
+                            <hr>
+                        </div>
+
+                    </div>
+
+
+                    <div class="education">
+
+                        <h4><span><i class='bx bx-book-alt'></i></span>EDUCATION</h4>
+                        <input type="button" name="answer" class="add-div" id="add-div" value="+" onclick="addDiv2()"
+                            style="width: 30px;">
+                        <br>
+                        <br>
+                        <div class="work-group" id="educationDiv">
+                            <label> Whom</label>
+                            <input type="text" class="work-one" id="work-one" style="width: 70%;">
+                            <hr>
+                            <label>Where</label>
+                            <input type="text" class="where-one" id="where-one" style="width: 70%;">
+                            <hr>
+                            <div class="from-to">
+                                <label for="from" class="from-label">From</label>
+                                <input type="date" class="from" id="from">
+                                <hr>
+                                <label for="to" class="to-label">To</label>
+                                <input type="date" class="to" id="to">
+                                <hr>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="interest-div">
+                        <td><label>
+                                <h4><span><i class='bx bx-glasses'></i></span>INTERESTS</h4>
+                            </label></td>
+                        <td>
+                            <ul id="interests"></ul>
+                            <input type="text" name="skill" id="addInterest" style="width: 40%;" />
+                            <input type="button" name="addinterest" class="add-div" id="add-div" value="+"
+                                onclick="addSkill()" style="width: 30px;">
+                        </td>
+                    </div>
+
+
+
+
+
+
+                </div>
+            </div>
+
+        </form>
+    </div>
+
+    <!-- <div class="buttons"> -->
+    <button type="submit" class="sent_print">Print CV and Download</button>
+    <!-- <button class="download" id="download">Download</button> -->
+    <!-- </div> -->
+
+    <script src="main.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+    <!-- let input = document.querySelector('input'); -->
+</body>
+
+</html>
