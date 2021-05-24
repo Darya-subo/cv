@@ -67,7 +67,7 @@ function readURL(input) {
             var widthContent = 342;
             console.log("widthContent = " + widthContent);
 
-            //если ширина картинки больше, чем наш контент, то добавляем коеффициент сжатия
+            
             if (+widthImg > +widthContent) {
                 var koef = +widthImg / +widthContent;
 
@@ -143,10 +143,10 @@ function removeInterests() {
     interestList = "";
     var items_interest = document.querySelectorAll("#interests li"),
         index, tab = [];
-    for (var j = 0; j < items_interest; j++) {
+    for (var j = 0; j < items_interest.length; j++) {
         tab.push(items_interest[j].innerHTML);
     }
-    for (var j = 0; j < items_interest; j++) {
+    for (var j = 0; j < items_interest.length; j++) {
         items_interest[j].onclick = function () {
 
             index = tab.indexOf(this.innerHTML);
